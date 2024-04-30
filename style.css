@@ -1,0 +1,171 @@
+:root {
+  --main-light-color: #fafafa;
+  --main-dark-color: #eee;
+  --main-button-color: #3470d8;
+  --main-button-hover-color: #063a95;
+  --black: #000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.imageGenerator {
+  position: relative;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("images/brushes-3129361_1920.jpg");
+  /* background: url("images/brushes-4226688_1920.jpg"); */
+  background-size: cover;
+  background-position: center;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    background: var(--black);
+  }
+
+  .content {
+    position: relative;
+    color: var(--main-light-color);
+    padding: 0 15px;
+    max-width: 760px;
+    text-align: center;
+
+    h1 {
+      font-size: 2.75rem;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 1.3rem;
+      margin-top: 10px;
+      font-weight: 300;
+    }
+
+    .generateForm {
+      height: 56px;
+      width: 100%;
+      padding: 6px;
+      margin: 45px 0 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--main-light-color);
+      border-radius: 30px;
+
+      .promptInput {
+        width: 100%;
+        height: 100%;
+        font-size: 1rem;
+        outline: none;
+        border: none;
+        background: none;
+        padding-left: 17px;
+      }
+
+      .controls {
+        display: flex;
+        height: 100%;
+        gap: 15px;
+
+        .imageQuantitySelector {
+          outline: none;
+          border: none;
+          background: none;
+          font-size: 1rem;
+        }
+
+        .generateButton {
+          outline: none;
+          border: none;
+          background: none;
+          font-size: 1rem;
+          font-weight: 500;
+          padding: 0 25px;
+          border-radius: 30px;
+          background: var(--main-button-color);
+          color: var(--main-light-color);
+
+          &:hover {
+            background: var(--main-button-hover-color);
+          }
+        }
+      }
+    }
+  }
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 0 15px;
+  max-width: 1250px;
+  margin: 50px 0;
+
+  .imageCard {
+    position: relative;
+    width: 285px;
+    aspect-ratio: 1/1;
+    border-radius: 7px;
+    overflow: hidden;
+
+    &:not(.loading):hover {
+      .downloadButton {
+        display: flex;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .downloadButton {
+      position: absolute;
+      bottom: 5px;
+      right: 5px;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      height: 25px;
+      width: 25px;
+      background: var(--main-button-color);
+      border-radius: 50%;
+
+      &:hover {
+        background: var(--main-button-hover-color);
+      }
+
+      img {
+        height: 15px;
+        width: 15px;
+      }
+    }
+  }
+
+  .loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--main-dark-color);
+    img {
+      object-fit: contain;
+      height: 100px;
+      width: 100px;
+    }
+  }
+}

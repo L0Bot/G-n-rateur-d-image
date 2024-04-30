@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Générateur d'images AI</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="imageGenerator">
+      <div class="content">
+        <h1>Outil de génération d'image</h1>
+        <p>
+          Écrivez une phrase qui décrit l'image que vous voudriez faire générer
+          par intelligence artificielle. Plus vous êtes précis dans votre
+          description, plus l'IA sera juste.
+        </p>
+        <form action="#" class="generateForm">
+          <input
+            type="text"
+            class="promptInput"
+            placeholder="Décrivez précisement ce que vous voulez générer..."
+            required
+          />
+          <div class="controls">
+            <select name="" id="" class="imageQuantitySelector">
+              <option value="1">1 image</option>
+              <option value="2">2 images</option>
+              <option value="3">3 images</option>
+              <option value="4">4 images</option>
+            </select>
+            <button type="submit" class="generateButton">Générer</button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <section class="gallery">
+      <div class="imageCard">
+        <img src="images/img-1.jpg" alt="image généré" />
+        <a href="#" class="downloadButton">
+          <img src="images/download.svg" alt="download icon" />
+        </a>
+      </div>
+      <div class="imageCard loading">
+        <img src="images/loading.svg" alt="image généré" />
+        <a href="#" class="downloadButton">
+          <img src="images/download.svg" alt="download icon" />
+        </a>
+      </div>
+      <div class="imageCard">
+        <img src="images/img-3.jpg" alt="image généré" />
+        <a href="#" class="downloadButton">
+          <img src="images/download.svg" alt="download icon" />
+        </a>
+      </div>
+      <div class="imageCard">
+        <img src="images/img-4.jpg" alt="image généré" />
+        <a href="#" class="downloadButton">
+          <img src="images/download.svg" alt="download icon" />
+        </a>
+      </div>
+    </section>
+  </body>
+</html>
