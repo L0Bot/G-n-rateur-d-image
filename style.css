@@ -1,8 +1,8 @@
 :root {
   --main-light-color: #fafafa;
   --main-dark-color: #eee;
-  --main-button-color: #3470d8;
-  --main-button-hover-color: #063a95;
+  --main-button-color: #6f00ff;
+  --main-button-hover-color: #5300bf;
   --black: #000;
 }
 
@@ -13,9 +13,9 @@
   font-family: "Josefin Sans", sans-serif;
 }
 
-.imageGenerator {
+.searchSection {
   position: relative;
-  height: 40vh;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,7 +38,7 @@
   .content {
     position: relative;
     color: var(--main-light-color);
-    padding: 0 15px;
+    padding: 70px 15px 0;
     max-width: 760px;
     text-align: center;
 
@@ -87,12 +87,14 @@
         }
 
         .generateButton {
+          text-align: center;
+          vertical-align: middle;
           outline: none;
           border: none;
           background: none;
           font-size: 1rem;
-          font-weight: 500;
-          padding: 0 25px;
+          font-weight: 600;
+          padding: 3px 25px 0;
           border-radius: 30px;
           background: var(--main-button-color);
           color: var(--main-light-color);
@@ -106,14 +108,14 @@
   }
 }
 
-.gallery {
+.gallerySection {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 15px;
   padding: 0 15px;
   max-width: 1250px;
-  margin: 50px 0;
+  margin: 50px auto;
 
   .imageCard {
     position: relative;
@@ -166,6 +168,52 @@
       object-fit: contain;
       height: 100px;
       width: 100px;
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .searchSection {
+    .content {
+      padding-top: 30px;
+      padding-bottom: 50px;
+      h1 {
+        font-size: 1.8rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+      .generateForm {
+        margin-top: 30px;
+        height: 52px;
+        display: block;
+        .controls {
+          height: 40px;
+          margin-top: 15px;
+          align-items: center;
+          justify-content: flex-end;
+          .imageQuantitySelector {
+            color: var(--main-light-color);
+            option {
+              color: #000;
+            }
+          }
+          .generateButton {
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+  .gallerySection {
+    margin-top: 20px;
+    .imageCard {
+      width: 100%;
+      &:not(.loading):hover {
+        .downloadButton {
+          display: flex;
+        }
+      }
     }
   }
 }
